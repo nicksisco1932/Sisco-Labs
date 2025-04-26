@@ -61,3 +61,27 @@ footer {
     border-radius: 5px;
     font-weight: bold;
 }
+
+/* Programs Page Specific Styling */
+.program {
+    margin-bottom: 4rem;
+}
+
+.program h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.program p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.program ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
