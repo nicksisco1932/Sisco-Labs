@@ -3,7 +3,12 @@ name: Deploy Static Site to GitHub Pages
 on:
   push:
     branches:
-      - main  # Change to 'master' if your branch is named that
+      - main  # Or master if that's your default
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   deploy:
@@ -13,13 +18,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up GitHub Pages
+      - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      - name: Upload static site files
+      - name: Upload static files
         uses: actions/upload-pages-artifact@v2
         with:
-          path: .  # Uploads everything in your repository (index.html, about.html, etc.)
+          path: .  # Point to root directory with your static HTML files
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
