@@ -1,4 +1,3 @@
-<!-- contact.html -->
 <!--
     Sisco Labs Website
     © 2025 Nicholas J. Sisco, Ph.D. | Sisco Labs
@@ -16,70 +15,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<!-- SEO and Open Graph Metadata -->
-	<meta name="description" content="Sisco Labs delivers science-based adaptive fitness systems for individuals seeking strength, resilience, and metabolic optimization. Built on real research, engineered for lasting transformation.">
-
-	<meta property="og:title" content="Sisco Labs | Science-Based Adaptive Training Systems" />
-	<meta property="og:description" content="Science-based adaptive fitness solutions for strength, resilience, and sustainable performance. Built on real research, engineered for lasting transformation." />
-	<meta property="og:url" content="https://nicksisco1932.github.io/Sisco-Labs/" />
-	<meta property="og:site_name" content="Sisco Labs" />
-
-	<title>Sisco Labs | Science-Based Adaptive Training Systems</title>
-	<link rel="stylesheet" href="assets/css/style.css">
-	<link rel="icon" type="image/png" href="assets/img/favicon.png">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Contact Sisco Labs to begin your transformative fitness journey.">
+    <title>Contact - Sisco Labs</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
 </head>
-<body>
-	<header>
-		<h1>Sisco Labs</h1>
-		<button class="nav-toggle" aria-label="Toggle navigation menu">
-			☰
-		</button>
-		<nav>
-			<div class="nav-links">
-				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="programs.html">Programs</a></li>
-					<li><a href="contact.html">Contact</a></li>
-				</ul>
-			</div>
-		</nav>
-	</header>
 
+<body>
+    <header>
+        <h1>Sisco Labs</h1>
+        <button class="nav-toggle" aria-label="Toggle navigation menu">☰</button>
+        <nav>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
     <main>
+        <section>
+            <h2>Contact Us</h2>
+            <p>Interested in learning more about Sisco Labs or joining the early access program? Reach out below.</p>
 
-        <h1>Get in Touch</h1>
-
-        <p>If you're ready to take control of your fitness, resilience, and long-term performance, reach out to Sisco Labs today.</p>
-
-        <form action="mailto:nicksisco1932@gmail.com" method="POST" enctype="text/plain">
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name" required><br><br>
-
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" required><br><br>
-
-            <label for="message">Message:</label><br>
-            <textarea id="message" name="message" rows="6" required></textarea><br><br>
-
-            <input type="submit" value="Send Message" class="cta-button">
-        </form>
-
+            <form action="https://formspree.io/f/movdjqjo" method="POST">
+                <input type="text" name="name" id="name" placeholder="Enter your name" required>
+                <br><br>
+                <input type="email" name="email" id="email" placeholder="Enter your email address" required>
+                <br><br>
+                <textarea name="message" id="message" rows="5" placeholder="Your message..." required></textarea>
+                <br><br>
+                <input type="submit" value="Send Message" class="cta-button">
+            </form>
+        </section>
     </main>
 
     <footer>
         <p>&copy; 2025 Sisco Labs. All rights reserved.</p>
     </footer>
-	<script>
-		const navToggle = document.querySelector('.nav-toggle');
-		const navLinks = document.querySelector('.nav-links');
 
-		navToggle.addEventListener('click', () => {
-			navLinks.classList.toggle('show');
-		});
-	</script>
+    <script>
+        const navToggle = document.querySelector(".nav-toggle");
+        const navLinks = document.querySelector(".nav-links");
+
+        navToggle.addEventListener("click", () => {
+            navLinks.classList.toggle("show");
+        });
+    </script>
 
 </body>
 </html>
