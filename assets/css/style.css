@@ -216,3 +216,39 @@ footer {
     font-size: 1.05rem;
     color: #444;
 }
+/* ========== Mobile Responsiveness ========== */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    main h1, .early-access h2, .who-for h2, .philosophy h2 {
+        font-size: 1.5rem;
+    }
+
+    main p, main ul li {
+        font-size: 1rem;
+    }
+
+    .early-access input[type="email"] {
+        width: 100%;
+    }
+
+    .cta-button, input[type="submit"] {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .who-for ul {
+        padding-left: 20px;
+    }
+}
