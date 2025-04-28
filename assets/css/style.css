@@ -25,15 +25,25 @@ header h1 {
     color: #222;
 }
 
+/* Navigation */
 nav ul {
     list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
     margin-top: 10px;
+}
+
+nav li {
+    display: inline;
 }
 
 nav a {
     text-decoration: none;
     color: #007BFF;
     font-weight: bold;
+    font-size: 1.1rem;
     transition: color 0.3s ease;
 }
 
@@ -75,9 +85,6 @@ ul {
 }
 
 /* ========== Buttons ========== */
-<<<<<<< HEAD
-.cta-button
-=======
 .cta-button {
     display: inline-block;
     background-color: #007BFF;
@@ -179,6 +186,7 @@ footer {
 .early-access input[type="submit"]:hover {
     background-color: #0056b3;
 }
+
 /* ========== Additional Sections ========== */
 .who-for,
 .philosophy {
@@ -216,6 +224,7 @@ footer {
     font-size: 1.05rem;
     color: #444;
 }
+
 /* ========== Mobile Responsiveness ========== */
 @media (max-width: 768px) {
     body {
@@ -229,6 +238,10 @@ footer {
     nav ul {
         flex-direction: column;
         gap: 10px;
+    }
+
+    nav a {
+        font-size: 1.2rem;
     }
 
     main h1, .early-access h2, .who-for h2, .philosophy h2 {
@@ -252,4 +265,3 @@ footer {
         padding-left: 20px;
     }
 }
->>>>>>> parent of 2aee339 (Mobile css)
