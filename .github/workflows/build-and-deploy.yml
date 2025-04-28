@@ -1,19 +1,25 @@
-name: Deploy Static Site to GitHub Pages
+name: Build and Deploy Static HTML to GitHub Pages
 
 on:
   push:
     branches:
-      - main
+      - main  # Replace with 'master' if your branch is named master
 
 permissions:
   contents: read
   pages: write
   id-token: write
 
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
   deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -21,10 +27,11 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      - name: Upload static files
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: .  # This uploads your index.html and other files
+          path: '.'
 
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v2
