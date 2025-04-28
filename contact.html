@@ -31,16 +31,20 @@
 </head>
 <body>
     <header>
-        <h1>Contact</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="programs.html">Programs</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+		<h1>Sisco Labs</h1>
+		<button class="nav-toggle" aria-label="Toggle navigation menu">
+			☰
+		</button>
+		<nav>
+			<ul class="nav-links">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="programs.html">Programs</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+
 
     <main>
 
@@ -66,5 +70,14 @@
     <footer>
         <p>&copy; 2025 Sisco Labs. All rights reserved.</p>
     </footer>
+	<script>
+		const navToggle = document.querySelector('.nav-toggle');
+		const navLinks = document.querySelector('.nav-links');
+
+		navToggle.addEventListener('click', () => {
+			navLinks.classList.toggle('show');
+		});
+	</script>
+
 </body>
 </html>
