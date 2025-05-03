@@ -265,3 +265,8 @@ footer {
         padding-left: 20px;
     }
 }
+
+p {
+    margin-bottom: 1.5em; /* Adjust spacing as needed */
+    line-height: 1.6;
+}
