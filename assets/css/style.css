@@ -7,10 +7,13 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.6;
+    font-size: 1.1rem;
+    line-height: 1.75;
     background-color: #f8f9fa;
     color: #333;
     padding: 20px;
+    max-width: 75ch;
+    margin: auto;
 }
 
 /* ========== Header ========== */
@@ -30,7 +33,7 @@ nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 24px;
     padding: 0;
     margin-top: 10px;
 }
@@ -53,35 +56,33 @@ nav a:hover {
 
 /* ========== Main Content ========== */
 main {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px 0;
+    padding: 40px 0;
 }
 
-main h1 {
+main h1, section h2 {
     font-size: 2rem;
     margin-bottom: 20px;
-    text-align: center;
+    color: #222;
 }
 
 section {
     margin-bottom: 40px;
 }
 
-section h2 {
-    font-size: 1.75rem;
-    margin-bottom: 15px;
-    color: #444;
-}
-
 section p,
 section ul {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
+    margin-bottom: 1.5em;
 }
 
 ul {
     padding-left: 20px;
+}
+
+/* ========== Paragraph & List Refinements ========== */
+p, li {
+    line-height: 1.75;
+    margin-bottom: 1.5em;
+    max-width: 75ch;
 }
 
 /* ========== Buttons ========== */
@@ -141,34 +142,39 @@ footer {
     color: #777;
 }
 
-/* ========== Early Access Section ========== */
-.early-access {
-    background-color: #e9f0f7;
+/* ========== Highlighted Sections ========== */
+.early-access,
+.who-for,
+.philosophy {
+    background-color: #ffffff;
     padding: 40px 20px;
     margin: 40px 0;
     border-radius: 10px;
     text-align: center;
 }
 
-.early-access h2 {
+.early-access h2,
+.who-for h2,
+.philosophy h2 {
     font-size: 2rem;
     margin-bottom: 15px;
     color: #222;
 }
 
-.early-access p {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
+.early-access p,
+.who-for p,
+.philosophy p {
     color: #555;
+    margin-bottom: 20px;
 }
 
 .early-access input[type="email"] {
     width: 80%;
     max-width: 400px;
     padding: 12px;
+    margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    margin-bottom: 15px;
     font-size: 1rem;
 }
 
@@ -187,45 +193,19 @@ footer {
     background-color: #0056b3;
 }
 
-/* ========== Additional Sections ========== */
-.who-for,
-.philosophy {
-    background-color: #ffffff;
-    padding: 40px 20px;
-    margin: 40px 0;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.who-for h2,
-.philosophy h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-    color: #222;
-}
-
-.who-for p,
-.philosophy p {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-    color: #555;
-}
-
 .who-for ul {
     list-style-type: disc;
-    padding-left: 40px;
     text-align: left;
-    max-width: 600px;
+    padding-left: 40px;
     margin: 0 auto;
+    max-width: 600px;
 }
 
 .who-for ul li {
-    margin-bottom: 10px;
-    font-size: 1.05rem;
     color: #444;
 }
 
-/* ========== Mobile Responsiveness ========== */
+/* ========== Responsive Enhancements ========== */
 @media (max-width: 768px) {
     body {
         padding: 10px;
@@ -237,26 +217,24 @@ footer {
 
     nav ul {
         flex-direction: column;
-        gap: 10px;
+        gap: 12px;
     }
 
     nav a {
         font-size: 1.2rem;
     }
 
-    main h1, .early-access h2, .who-for h2, .philosophy h2 {
+    main h1, section h2 {
         font-size: 1.5rem;
     }
 
-    main p, main ul li {
+    p, li {
         font-size: 1rem;
     }
 
-    .early-access input[type="email"] {
-        width: 100%;
-    }
-
-    .cta-button, input[type="submit"] {
+    .early-access input[type="email"],
+    .cta-button,
+    input[type="submit"] {
         width: 100%;
         padding: 12px;
     }
@@ -264,14 +242,4 @@ footer {
     .who-for ul {
         padding-left: 20px;
     }
-}
-
-p {
-    margin-bottom: 1.5em; /* Adjust spacing as needed */
-    line-height: 1.6; /* was 1.6, 3 is too much */
-}
-
-li {
-    margin-bottom: 1.5em; /* Adjust spacing as needed */
-    line-height: 1.6; /* was 1.6, 3 is too much */
 }
