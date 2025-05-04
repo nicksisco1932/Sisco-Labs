@@ -268,5 +268,10 @@ footer {
 
 p {
     margin-bottom: 1.5em; /* Adjust spacing as needed */
-    line-height: 2; /* was 1.6, 3 is too much */
+    line-height: 1.6; /* was 1.6, 3 is too much */
+}
+
+li {
+    margin-bottom: 1.5em; /* Adjust spacing as needed */
+    line-height: 1.6; /* was 1.6, 3 is too much */
 }
