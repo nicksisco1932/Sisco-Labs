@@ -1,12 +1,12 @@
-<!--
+﻿<!--
     Sisco Labs Website
-    © 2025 Nicholas J. Sisco, Ph.D. | Sisco Labs
+    Ac 2025 Nicholas J. Sisco, Ph.D. | Sisco Labs
     All rights reserved.
 
-    This website, including all underlying code, structure, design, text, images, and content, 
+    This website, including all underlying code, structure, design, text, images, and content,
     is the intellectual property of Nicholas J. Sisco, Ph.D. and Sisco Labs.
 
-    Unauthorized reproduction, distribution, modification, or public display without explicit 
+    Unauthorized reproduction, distribution, modification, or public display without explicit
     written consent is prohibited. Violators will be subject to legal action.
 
     Scientific Integrity | Transformative Growth | Adaptive Fitness Systems
@@ -21,74 +21,120 @@
     <title>Sisco Labs | Science-Based Adaptive Training Systems</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Spectral:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <h1>Sisco Labs</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="programs.html">Programs</a></li>
-                <li><a href="contact.html">Contact</a></li>
-				<li><a href="blog.html">Blog</a></li>
-            </ul>
-        </nav>
+    <header class="site-header">
+        <div class="container nav-wrap">
+            <a class="brand" href="index.html">Sisco Labs</a>
+            <nav aria-label="Primary">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="blog.html">Journal</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a class="nav-cta" href="#early-access">Early Access</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section>
-            <h2>Welcome to Sisco Labs</h2>
-            <p>Where science meets personal transformation. Elevate your fitness journey with precision, creativity, and integrity.</p>
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="container hero-content">
+                <p class="eyebrow">Science-based adaptive training systems</p>
+                <h1 id="hero-title">Build resilient performance, not just a physique.</h1>
+                <p class="hero-subhead">Precision training and nutrition for people who want long-term adaptation and autonomy.</p>
+                <ul class="hero-list">
+                    <li>Physiology-first programming that breaks plateaus.</li>
+                    <li>Metabolic resilience built through intelligent stress and recovery.</li>
+                    <li>Clear decision frameworks so you can own your progress.</li>
+                </ul>
+                <div class="hero-actions">
+                    <a href="programs.html" class="button primary">Explore Programs</a>
+                    <p class="hero-secondary">Early Access enrollment is below if you want first access.</p>
+                </div>
+            </div>
         </section>
 
-        <section class="hero">
-            <h1>Welcome to Sisco Labs</h1>
-            <p><strong>Resilience is built, not given.</strong></p>
-            <p>At Sisco Labs, we believe fitness is more than appearance — it is an evolving biological system rooted in adaptation, resilience, and autonomy. Our programs are built on scientific foundations, empowering you not just to train harder, but to train smarter — for life.</p>
-
-            <ul>
-                <li>Master adaptive physiology and break plateaus intelligently</li>
-                <li>Rebuild your metabolic resilience through strategic training and fueling</li>
-                <li>Develop lasting strength, energy, and autonomy beyond aesthetics</li>
-            </ul>
-
-            <p>This isn't just another workout plan. It's a biological education for your future self.</p>
-
-            <p><strong>Ready to reclaim your physiology?</strong></p>
-
-            <a href="programs.html" class="cta-button">Explore the Programs →</a>
-            <a href="contact.html" class="cta-button">Get in Touch →</a>
+        <section class="programs" aria-labelledby="programs-title">
+            <div class="container">
+                <div class="section-head">
+                    <h2 id="programs-title">Programs</h2>
+                    <p>Four focused tracks built to meet you where you are and push what you can become.</p>
+                </div>
+                <div class="tile-grid">
+                    <a class="program-tile" href="programs.html">
+                        <span class="tile-label">Adaptive Strength</span>
+                        <h3>Foundation Build</h3>
+                        <p>Reconstruct movement patterns and progressive loading for long-term capacity.</p>
+                        <span class="tile-cta">View program</span>
+                    </a>
+                    <a class="program-tile" href="programs.html">
+                        <span class="tile-label">Metabolic Resilience</span>
+                        <h3>Energy Systems</h3>
+                        <p>Train fuel flexibility, recovery, and sustainable output under real life stress.</p>
+                        <span class="tile-cta">View program</span>
+                    </a>
+                    <a class="program-tile" href="programs.html">
+                        <span class="tile-label">Performance Focus</span>
+                        <h3>Strength + Speed</h3>
+                        <p>Target power, athleticism, and durability without compromising longevity.</p>
+                        <span class="tile-cta">View program</span>
+                    </a>
+                    <a class="program-tile" href="programs.html">
+                        <span class="tile-label">Deep Reset</span>
+                        <h3>Rebuild Phase</h3>
+                        <p>Strategic deloads, nutrition calibrations, and habit architecture for renewal.</p>
+                        <span class="tile-cta">View program</span>
+                    </a>
+                </div>
+            </div>
         </section>
 
-        <section class="early-access">
-            <h2>Join the Early Access List</h2>
-            <p>Be the first to experience a scientifically-driven fitness transformation. Get early program announcements, beta opportunities, and insider insights directly from Sisco Labs.</p>
-
-            <form action="https://formspree.io/f/movdjqjo" method="POST">
-                <input type="email" name="email" id="email" placeholder="Enter your email address" required>
-                <br><br>
-                <input type="submit" value="Join Now" class="cta-button">
-            </form>
+        <section class="early-access" id="early-access" aria-labelledby="early-access-title">
+            <div class="container">
+                <h2 id="early-access-title">Early Access</h2>
+                <p>Get the first look at new programs, limited cohort openings, and research-backed guidance.</p>
+                <form action="https://formspree.io/f/movdjqjo" method="POST">
+                    <label class="sr-only" for="email">Email address</label>
+                    <div class="form-row">
+                        <input type="email" name="email" id="email" placeholder="Enter your email address" required>
+                        <button type="submit" class="button secondary">Join the list</button>
+                    </div>
+                </form>
+            </div>
         </section>
 
-        <section class="who-for">
-            <h2>Who This Is For</h2>
-            <p>Sisco Labs is designed for individuals who demand more from their fitness journey — those who value science, resilience, and long-term adaptive growth over shortcuts and temporary transformations.</p>
-            <ul>
-                <li>You believe fitness should enhance your entire life, not just your appearance.</li>
-                <li>You value scientific integrity over trends and gimmicks.</li>
-                <li>You are committed to sustainable strength and metabolic resilience.</li>
-                <li>You want to take ownership of your adaptation — not outsource it.</li>
-            </ul>
+        <section class="who-for" aria-labelledby="who-for-title">
+            <div class="container">
+                <h2 id="who-for-title">Who This Is For</h2>
+                <p>Sisco Labs is for people who want durable, science-led change, not quick fixes.</p>
+                <ul class="focus-list">
+                    <li>You want training that scales with your real life, not a rigid template.</li>
+                    <li>You care about strength, energy, and healthspan more than hype.</li>
+                    <li>You want to understand the why behind your plan.</li>
+                    <li>You are ready to take ownership of adaptation.</li>
+                </ul>
+                <h3>Not for you if...</h3>
+                <ul class="not-for-list">
+                    <li>You want extreme shortcuts or gimmicks.</li>
+                    <li>You expect overnight results without consistent effort.</li>
+                    <li>You are looking for a one-size-fits-all plan.</li>
+                    <li>You prefer trends over evidence.</li>
+                </ul>
+            </div>
         </section>
 
-        <section class="philosophy">
-            <h2>Our Philosophy</h2>
-            <p>At Sisco Labs, we recognize that fitness is an evolving biological system — not a static achievement.  
-            We guide individuals to engineer their own adaptation intelligently, bridging the latest physiological science with the timeless principles of resilience, discipline, and autonomy.  
-            Our mission is simple: equip you to become your own system architect — for life.</p>
+        <section class="philosophy" aria-labelledby="philosophy-title">
+            <div class="container">
+                <h2 id="philosophy-title">Our Philosophy</h2>
+                <p>Fitness is a living system. We design training that respects biology, builds resilience, and keeps you in control. The goal is simple: make you the architect of your own adaptation.</p>
+            </div>
         </section>
     </main>
 
