@@ -63,15 +63,18 @@
             <a href="contact.html" class="cta-button">Get in Touch →</a>
         </section>
 
-        <section class="early-access">
+        <section id="early-access" class="early-access">
             <h2>Join the Early Access List</h2>
-            <p>Be the first to experience a scientifically-driven fitness transformation. Get early program announcements, beta opportunities, and insider insights directly from Sisco Labs.</p>
+            <p>Receive program updates, pilot access notices, and implementation notes from Sisco Labs.</p>
+            <p>If selected for early access, expect an initial note within 7 days.</p>
+            <p>Privacy: your email is used only for Sisco Labs updates and is not sold or shared for advertising.</p>
 
-            <form action="https://formspree.io/f/movdjqjo" method="POST">
-                <input type="email" name="email" id="email" placeholder="Enter your email address" required>
+            <form id="early-access-form" action="https://formspree.io/f/movdjqjo" method="POST" novalidate>
+                <input type="email" name="email" id="email" placeholder="Enter your email address" required aria-describedby="early-access-status">
                 <br><br>
                 <input type="submit" value="Join Now" class="cta-button">
             </form>
+            <p id="early-access-status" role="status" aria-live="polite"></p>
         </section>
 
         <section class="who-for">
@@ -97,5 +100,100 @@
         <p>&copy; 2025 Sisco Labs. All rights reserved.</p>
     </footer>
 
+    <script>
+        (function () {
+            const form = document.getElementById("early-access-form");
+            const emailInput = document.getElementById("email");
+            const status = document.getElementById("early-access-status");
+
+            if (!form || !emailInput || !status) {
+                return;
+            }
+
+            const submitButton = form.querySelector('input[type="submit"]');
+            const fallbackEmail = "hello@siscolabs.com";
+            const fallbackSubject = "Sisco Labs Early Access Request";
+            const formspreeEndpoint = form.getAttribute("action") || "";
+            const isFormspreeConfigured =
+                /^https:\/\/formspree\.io\/f\/[a-z0-9]+$/i.test(formspreeEndpoint) &&
+                !/your-form-id/i.test(formspreeEndpoint);
+
+            function setStatus(message, isError) {
+                status.textContent = message;
+                status.style.color = isError ? "#b00020" : "#0a7f2e";
+            }
+
+            function isValidEmail(value) {
+                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+            }
+
+            function openMailtoFallback(email) {
+                const subject = encodeURIComponent(fallbackSubject);
+                const body = encodeURIComponent(
+                    "Please add me to the Sisco Labs Early Access list.\n\nEmail: " + email
+                );
+                window.location.href = "mailto:" + fallbackEmail + "?subject=" + subject + "&body=" + body;
+            }
+
+            form.addEventListener("submit", async function (event) {
+                event.preventDefault();
+
+                const email = emailInput.value.trim();
+                if (!email) {
+                    setStatus("Enter an email address to continue.", true);
+                    emailInput.focus();
+                    return;
+                }
+
+                if (!isValidEmail(email)) {
+                    setStatus("Enter a valid email address (example: name@example.com).", true);
+                    emailInput.focus();
+                    return;
+                }
+
+                if (submitButton) {
+                    submitButton.disabled = true;
+                    submitButton.value = "Submitting...";
+                }
+
+                if (!isFormspreeConfigured) {
+                    openMailtoFallback(email);
+                    setStatus("Submission moved to your email app because Formspree is not configured.", true);
+                    if (submitButton) {
+                        submitButton.disabled = false;
+                        submitButton.value = "Join Now";
+                    }
+                    return;
+                }
+
+                try {
+                    const response = await fetch(formspreeEndpoint, {
+                        method: "POST",
+                        headers: {
+                            "Accept": "application/json",
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({ email: email })
+                    });
+
+                    if (response.ok) {
+                        setStatus("Request received. If selected, your first note will arrive within 7 days.", false);
+                        form.reset();
+                    } else {
+                        openMailtoFallback(email);
+                        setStatus("Formspree is unavailable. Submission moved to your email app.", true);
+                    }
+                } catch (error) {
+                    openMailtoFallback(email);
+                    setStatus("Network error. Submission moved to your email app.", true);
+                } finally {
+                    if (submitButton) {
+                        submitButton.disabled = false;
+                        submitButton.value = "Join Now";
+                    }
+                }
+            });
+        })();
+    </script>
 </body>
 </html>
